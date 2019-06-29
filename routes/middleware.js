@@ -7,7 +7,8 @@
  * you have more middleware you may want to group it as separate
  * modules in your project's /lib directory.
  */
-var _ = require('lodash');
+// const _ = require('lodash');
+const keystone = require('keystone');
 
 
 /**
@@ -18,12 +19,7 @@ var _ = require('lodash');
 	or replace it with your own templates / logic.
 */
 exports.initLocals = function (req, res, next) {
-	res.locals.navLinks = [
-		{ label: 'Home', key: 'home', href: '/' },
-		{ label: 'Blog', key: 'blog', href: '/blog' },
-		{ label: 'Contact', key: 'contact', href: '/contact' },
-	];
-	res.locals.user = req.user;
+	// trang chủ, giới thiệu, dịch vụ, tin tức, liên hệ
 	next();
 };
 
@@ -32,14 +28,36 @@ exports.initLocals = function (req, res, next) {
 	Fetches and clears the flashMessages before a view is rendered
 */
 exports.flashMessages = function (req, res, next) {
-	var flashMessages = {
-		info: req.flash('info'),
-		success: req.flash('success'),
-		warning: req.flash('warning'),
-		error: req.flash('error'),
-	};
-	res.locals.messages = _.some(flashMessages, function (msgs) { return msgs.length; }) ? flashMessages : false;
-	next();
+	keystone.list('Category').model.find({}, (err, categories) => {
+		if (err) throw err;
+		res.locals.categories = [];
+		categories = categories
+			.sort((a, b) => {
+				let num1 = 0;
+				let num2 = 0;
+				if (a.sortOrder) num1 = a.sortOrder;
+				if (b.sortOrder) num2 = b.sortOrder;
+				return num1 - num2;
+			});
+
+		const mapCategory = {};
+		categories.forEach(category => {
+			if (!category.isParent && category.parent) {
+				if (!mapCategory[category.parent]) mapCategory[category.parent] = [];
+				mapCategory[category.parent].push(category);
+			}
+		});
+		categories.forEach(category => {
+			if (category.isParent) {
+				res.locals.categories.push({
+					parent: category,
+					children: mapCategory[category.id],
+				});
+			}
+		});
+		console.log(res.locals.categories);
+		next();
+	});
 };
 
 

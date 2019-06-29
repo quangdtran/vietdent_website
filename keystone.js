@@ -64,6 +64,9 @@ keystone.set('nav', {
 	Page: 'pages',
 });
 
+// set url for admin page
+keystone.set('admin path', 'admin');
+
 // Start Keystone to connect to your database and initialise the web server
 
 

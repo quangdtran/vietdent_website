@@ -60,16 +60,28 @@
             </div>
           </div>
           <ul class="nav navbar-nav">
+            <% for (let i = 0; i < categories.length; i++) { %>
+              <li class="
+                <%= section === 'home' ? 'active' : '' %>
+                <%= categories[i].children ? 'dropdown' : '' %>
+              ">
+                <a
+                  data-toggle="<%= categories[i].type === 'post' ? 'dropdown' : '' %>"
+                  href="<%= categories[i].type === 'post' ? '' : '/post-list' %>"
+                ><%= categories[i].parent.nameVie.toUpperCase() %></a></li>
+                <% if (categories[i].children) { %>
+                  <ul class="dropdown-menu with-bg" role="menu">
+                    <li>
+                      <% for (let j = 0; j < categories[i].children.length; j++) { %>
+                        <a href="/about"><%= categories[i].children[j].nameVie %></a>
+                      <% } %>
+                    </li>
+                  </ul>
+                <% } %>
+            <% } %>
             <li class="<%= section === 'home' ? 'active' : '' %>"><a href="/">TRANG CHỦ</a></li>
             <li class="dropdown <%= section === 'about' ? 'active' : '' %>">
               <a href="#">GIỚI THIỆU</a>
-              <ul class="dropdown-menu with-bg" role="menu">
-                <li>
-                  <a href="/about">Mục Tiêu Hình Thành Và Phát Triễn Vietdent</a>
-                  <a href="/about">Đội Ngũ Y Bác Sỹ</a>
-                  <a href="/about">Tại Sao Nhiều Khách Hàng Chọn Vietdent</a>
-                </li>
-              </ul>
             </li>
             <li class="dropdown <%= section === 'services' ? 'active' : '' %>"> <a data-toggle="dropdown" href="#">DỊCH VỤ</a>
               <ul class="dropdown-menu with-bg" role="menu">
