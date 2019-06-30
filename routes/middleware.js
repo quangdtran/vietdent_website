@@ -9,6 +9,7 @@
  */
 // const _ = require('lodash');
 const keystone = require('keystone');
+const converter = require('../utils/converter');
 
 
 /**
@@ -55,7 +56,8 @@ exports.flashMessages = function (req, res, next) {
 				});
 			}
 		});
-		console.log(res.locals.categories);
+		// console.log(res.locals.categories);
+		res.locals.converter = converter;
 		next();
 	});
 };

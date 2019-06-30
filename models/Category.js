@@ -26,6 +26,7 @@ Category.add({
 		type: Types.Select, options: [
 			{ label: 'post', value: 'post' },
 			{ label: 'page', value: 'page' },
+			{ label: 'title', value: 'title' },
 		], required: true, initial: true },
 	sortOrder: { type: Number, label: 'Thứ tự hiển thị' },
 	createdAt: { type: Date, label: 'Tạo vào lúc', default: Date.now },
@@ -39,6 +40,6 @@ function setNameDisplay () {
 
 Category.relationship({ ref: 'Post', path: 'posts', refPath: 'category' });
 
-Category.defaultColumns = 'nameVie, nameEng, type, isParent, parent';
+Category.defaultColumns = 'nameVie, nameEng, type, sortOrder, isParent, parent';
 
 Category.register();
