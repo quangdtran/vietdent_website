@@ -31,7 +31,7 @@ Category.add({
 	sortOrder: { type: Number, label: 'Thứ tự hiển thị' },
 	createdAt: { type: Date, label: 'Tạo vào lúc', default: Date.now },
 	createBy: { type: Types.Relationship, label: 'Tạo bởi tài khoản', ref: 'Account' },
-	nameDisplay: { type: String, watch: 'nameVie', initial: false, noedit: true, value: setNameDisplay },
+	nameDisplay: { type: String, hidden: true, watch: 'nameVie', initial: false, noedit: true, value: setNameDisplay },
 });
 
 function setNameDisplay () {

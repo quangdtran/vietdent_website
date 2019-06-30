@@ -11,5 +11,4 @@ exports = module.exports = function (req, res) {
 
 	// Render the view
 	view.render('home');
-	console.log('check home');
 };

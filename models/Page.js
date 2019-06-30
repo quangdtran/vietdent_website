@@ -7,10 +7,9 @@ Page.add({
 	title: { type: String, require: true, initial: true },
 	htmlContent: { type: Types.Html, wysiwyg: true, height: 400 },
 	category: { type: Types.Relationship, ref: 'Category', filters: { type: 'page' } },
-	message: { type: String },
 	createdAt: { type: Date, default: Date.now },
 	createBy: { type: Types.Relationship, ref: 'Account' },
 });
 
-Page.defaultColumns = 'category, message, createdAt, createBy';
+Page.defaultColumns = 'title, category, createdAt, createBy';
 Page.register();

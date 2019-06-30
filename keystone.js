@@ -15,14 +15,18 @@ keystone.init({
 	'brand': 'hospital website',
 
 	'wysiwyg cloudinary images': true,
+
 	'wysiwyg additional buttons': 'searchreplace visualchars,'
 		+ ' charmap ltr rtl pagebreak paste, forecolor backcolor,'
 		+ ' emoticons media, preview print, fontsizeselect ',
+
 	'wysiwyg additional plugins': 'example, table, advlist, anchor,'
 		+ ' autolink, autosave, bbcode, charmap, contextmenu, '
 		+ ' directionality, emoticons, fullpage, hr, media, pagebreak,'
 		+ ' paste, preview, searchreplace, textcolor,'
 		+ ' visualblocks, visualchars, wordcountwy',
+
+	'wysiwyg additional options': { external_plugins: { uploadimage: '/js/uploadimage/plugin.min.js' } },
 
 	'stylus': 'public',
 	'static': 'public',
