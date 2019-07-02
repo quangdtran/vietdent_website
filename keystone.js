@@ -18,13 +18,13 @@ keystone.init({
 
 	'wysiwyg additional buttons': 'searchreplace visualchars,'
 		+ ' charmap ltr rtl pagebreak paste, forecolor backcolor,'
-		+ ' emoticons media, preview print, fontsizeselect ',
+		+ ' emoticons media, preview print, fontsizeselect, ',
 
 	'wysiwyg additional plugins': 'example, table, advlist, anchor,'
-		+ ' autolink, autosave, bbcode, charmap, contextmenu, '
+		+ ' autolink, autosave, charmap, contextmenu, '
 		+ ' directionality, emoticons, fullpage, hr, media, pagebreak,'
 		+ ' paste, preview, searchreplace, textcolor,'
-		+ ' visualblocks, visualchars, wordcountwy',
+		+ ' visualblocks, visualchars, wordcountwy, image',
 
 	'wysiwyg additional options': { external_plugins: { uploadimage: '/js/uploadimage/plugin.min.js' } },
 

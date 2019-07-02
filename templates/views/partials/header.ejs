@@ -9,10 +9,14 @@
           54452 </div>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-        <div class="top-bar-social"> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
-              class="fa fa-google-plus"></i></a> <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i
+        <div class="top-bar-social"> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#">
+            <i class="fa fa-google-plus"></i></a> <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i
               class="fa fa-skype"></i></a> </div>
-        <div class="top-bar-mail"> <i class="fa fa-envelope"></i> <a href="#">office@dental.com</a> </div>
+        <div class="top-bar-mail">
+          <i class="fa fa-envelope"></i> 
+          <a id="lang-vi" href="#">vi-VN</a>
+          <a id="lang-en" href="#">en-US</a>
+        </div>
       </div>
     </div>
   </div>
@@ -68,18 +72,16 @@
                 <%= section === categories[i].parent.id ? 'active' : '' %>
                 <%= categories[i].children ? 'dropdown' : '' %>
               ">
-            <a
-              data-toggle="<%= categories[i].parent.type === 'title' ? 'dropdown' : '' %>"
-              href="<%= converter.getUrlCategory(categories[i].parent, categories[i].parent) %>"
-            >
-            <%= categories[i].parent.nameVie.toUpperCase() %></a>
+            <a data-toggle="<%= categories[i].parent.type === 'title' ? 'dropdown' : '' %>"
+              href="<%= converter.getUrlCategory(categories[i].parent, categories[i].parent) %>">
+              <%= categories[i].parent.nameVie.toUpperCase() %></a>
             <% if (categories[i].children) { %>
             <ul class="dropdown-menu with-bg" role="menu">
               <% for (let j = 0; j < categories[i].children.length; j++) { %>
               <% var category = categories[i].children[j] %>
               <li>
                 <a href="<%= converter.getUrlCategory(categories[i].children[j], categories[i].parent) %>">
-                <%= category.nameVie %></a>
+                  <%= category.nameVie %></a>
               </li>
               <% } %>
             </ul>

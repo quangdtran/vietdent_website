@@ -16,31 +16,114 @@
   <!-- =========================
       FAV AND TOUCH ICONS  
 ============================== -->
-  <link rel="shortcut icon" href="images/favicon.ico">
-  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
 
   <!-- =========================
      STYLESHEETS   
 ============================== -->
 
-  <link rel="stylesheet" type="text/css" href="css/master.css" />
+  <link rel="stylesheet" type="text/css" href="/css/master.css" />
 </head>
 
 <body data-spy="scroll" data-target=".navbar">
-  <div class="preloader" id="preloader"> <img src="images/preloader.gif" alt="" /> </div>
+  <div class="preloader" id="preloader"> <img src="/images/preloader.gif" alt="" /> </div>
   <!-- HEADER -->
   <%- include partials/header %>
   <!-- END HEADER -->
-  
+
+  <!-- template -->
+  <div class="container">
+    <div class="row .serv-items">
+      <div class="serv-items" id="isotope-items" style="position: relative; height: 1126px;">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 history-text">
+          <%- post.contentVie %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- template -->
+
+  <div class="blog">
+    <div class="container">
+      <div class="row">
+        <div class="blog-container">
+          <div class="owl-blog" id="owl-blog">
+
+            <!-- BLOG ITEM -->
+            <div class="blog-item">
+              <div class="blog-item-image"> <img src="/images/blog1.jpg" alt="" />
+                <!--<div class="blog-item-date"><i class="fa fa-calendar-o"></i> 03.10.2016</div>
+                <div class="blog-item-comments"><i class="fa fa-comments-o"></i> 7</div>-->
+              </div>
+              <div class="blog-item-title">
+                <h3><a href="#">The Importance of Routine Dental Exams</a></h3>
+              </div>
+              <!--<div class="blog-item-author"><a href="#">by Dr. Kaeden Bernard</a></div>
+              <div class="blog-item-text">Dental implant placement is no longer performed only by oral surgeons and periodontists; general dentists are also increasingly providing difficult surgical implant services. Dental implants may be used to replace single teeth, replace multiple teeth.</div>
+              <div class="blog-item-button"><a href="#" class="btn btn-primary-1">READ MORE</a></div>-->
+            </div>
+
+            <!-- BLOG ITEM -->
+            <div class="blog-item">
+              <div class="blog-item-image"> <img src="/images/blog2.jpg" alt="" />
+                <!--<div class="blog-item-date"><i class="fa fa-calendar-o"></i> 03.10.2016</div>
+                <div class="blog-item-comments"><i class="fa fa-comments-o"></i> 12</div>-->
+              </div>
+              <div class="blog-item-title">
+                <h3><a href="#">We are giving each of our patients<br>
+                    the healthy smile!</a></h3>
+              </div>
+              <!--<div class="blog-item-author"><a href="#">by Dr. Kaeden Bernard</a></div>
+              <div class="blog-item-text">Dental implant placement is no longer performed only by oral surgeons and periodontists; general dentists are also increasingly providing difficult surgical implant services. Dental implants may be used to replace single teeth, replace multiple teeth.</div>
+              <div class="blog-item-button"><a href="#" class="btn btn-primary-1">READ MORE</a></div>-->
+            </div>
+
+            <!-- BLOG ITEM -->
+            <div class="blog-item">
+              <div class="blog-item-image"> <img src="/images/blog3.jpg" alt="" />
+                <!--<div class="blog-item-date"><i class="fa fa-calendar-o"></i> 03.10.2016</div>
+                <div class="blog-item-comments"><i class="fa fa-comments-o"></i> 7</div>-->
+              </div>
+              <div class="blog-item-title">
+                <h3><a href="#">Protect Your Child's Teeth with Dental Sealants</a></h3>
+              </div>
+              <!--<div class="blog-item-author"><a href="#">by Dr. Kaeden Bernard</a></div>
+              <div class="blog-item-text">Dental implant placement is no longer performed only by oral surgeons and periodontists; general dentists are also increasingly providing difficult surgical implant services. Dental implants may be used to replace single teeth, replace multiple teeth.</div>
+              <div class="blog-item-button"><a href="#" class="btn btn-primary-1">READ MORE</a></div>-->
+            </div>
+
+            <!-- BLOG ITEM -->
+            <div class="blog-item">
+              <div class="blog-item-image"> <img src="/images/blog2.jpg" alt="" />
+                <!--<div class="blog-item-date"><i class="fa fa-calendar-o"></i> 03.10.2016</div>
+                <div class="blog-item-comments"><i class="fa fa-comments-o"></i> 12</div>-->
+              </div>
+              <div class="blog-item-title">
+                <h3><a href="#">We are givinghướng dẫn làm song ngữ website each of our patients<br>
+                    the healthy smile!</a></h3>
+              </div>
+              <!--<div class="blog-item-author"><a href="#">by Dr. Kaeden Bernard</a></div>
+              <div class="blog-item-text">Dental implant placement is no longer performed only by oral surgeons and periodontists; general dentists are also increasingly providing difficult surgical implant services. Dental implants may be used to replace single teeth, replace multiple teeth.</div>
+              <div class="blog-item-button"><a href="#" class="btn btn-primary-1">READ MORE</a></div>-->
+            </div>
+          </div>
+          <!-- BLOG BUTTONS -->
+          <div class="carousel-btn carousel-next" id="next-blog"><i class="fa fa-angle-right"></i></div>
+          <div class="carousel-btn carousel-prev" id="prev-blog"><i class="fa fa-angle-left"></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- FOOTER
 ============================== -->
   <%- include partials/footer %>
   <!-- =========================
     END FOOTER
 ============================== -->
-
   <!-- =========================
     POPUP FORMS
 ============================== -->
@@ -563,56 +646,11 @@
     END COLOR SWITHER
 ============================== -->
 
-  <link rel="stylesheet" type="text/css" href="css/responsive.css" />
+  <link rel="stylesheet" type="text/css" href="/css/responsive.css" />
 
-  <!-- =========================
-     SCRIPTS   
-============================== -->
-  <!-- JQUERY -->
-  <script src="js/jquery-2.2.0.min.js"></script>
-
-  <!-- BOOTSTRAP -->
-  <script src="js/bootstrap.min.js"></script>
-
-  <!-- SLIDER PRO -->
-  <script src="js/jquery.sliderPro.min.js"></script>
-
-  <!-- LIGHTBOX -->
-  <script src="js/jquery.fancybox.pack.js"></script>
-
-  <!-- CAROUSEL -->
-  <script src="js/owl.carousel.js"></script>
-
-  <!-- STAR RATING -->
-  <script src="js/jquery.barrating.min.js"></script>
-
-  <!-- ISOTOPE FILTER -->
-  <script src="js/isotope.pkgd.min.js"></script>
-
-  <!-- SCROLLSPY -->
-  <script src="js/scrollspy.js"></script>
-
-  <!-- DATEPICKER -->
-  <script src="js/moment.js"></script>
-  <script src="js/bootstrap-datetimepicker.min.js"></script>
-
-  <!-- FORM VALIDATOR -->
-  <script src="js/jquery.form-validator.js"></script>
-
-  <!-- SELECT STYLING -->
-  <script src="js/jquery.selectBox.js"></script>
-
-  <!-- MATCHHEIGHT -->
-  <script src="js/jquery.matchHeight.js"></script>
-
-  <!-- JQUERY FORM -->
-  <script src="js/jquery.form.js"></script>
-
-  <!-- IMAGES LOADED -->
-  <script src="js/imagesloaded.pkgd.min.js"></script>
-
-  <!-- CUSTOM SCRIPT -->
-  <script src="js/theme.js"></script>
+  
+  <!-- MY JAVASCRIPT -->
+  <%- include resources/javascript %>
 
   <!-- GOOGLE MAPS -->
 
