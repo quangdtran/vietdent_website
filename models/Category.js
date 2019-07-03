@@ -8,12 +8,11 @@ var Types = keystone.Field.Types;
 
 var Category = new keystone.List('Category', {
 	map: { name: 'nameDisplay' },
-	autokey: { path: 'nameVie', from: 'nameVie, nameEng', unique: true },
 });
 
 Category.add({
 	nameVie: { type: String, label: 'Tên tiếng việt', required: true, initial: true },
-	nameEng: { type: String, label: 'Tên tiếng anh', default: '' },
+	nameEng: { type: String, label: 'Tên tiếng anh', default: 'no name' },
 	isParent: { type: Boolean, label: 'Đặt trên thanh menu', require: true, initial: true },
 	parent: {
 		type: Types.Relationship,

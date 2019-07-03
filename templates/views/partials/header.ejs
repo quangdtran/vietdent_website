@@ -5,8 +5,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-        <div class="top-bar-adress"> <i class="flaticon-navigation-arrow"></i> Henderson Blvd PO Box 356012, Tampa, FL
-          54452 </div>
+        <div class="top-bar-adress"> <i class="flaticon-navigation-arrow"></i><%= header.addressText %></div>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
         <div class="top-bar-social"> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#">
@@ -24,23 +23,23 @@
 <div class="header" id="header">
   <div class="container">
     <div class="row">
-      <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
-        <div class="header-logo"> <a href="/"><img src="images/logo.svg" alt="" />
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div class="header-logo"> <a href="/"><img src="/images/logo.svg" alt="" />
             <span class="bold600 color-child-6">
-              DENTAL
+              <%= header.titleText1.toUpperCase() %>
             </span>
-            <span class="color-child-5">
-              CLINIC
+            <span class="color-child-6">
+              <%= header.titleText2.toUpperCase() %>
             </span>
           </a> </div>
       </div>
-      <div class="col-lg-8 col-md-8 col-sm-7 col-xs-12">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="header-button"> <a href="#bookform1" class="fancybox-2 btn btn-default">
             <span class="plus">
               +
             </span>
-            MAKE AN APPOINTMENT</a> </div>
-        <div class="header-phone"> <i class="fa fa-phone"></i> 120 852-4632 </div>
+            <%= header.bookingText.toUpperCase() %></a> </div>
+        <div class="header-phone"> <i class="fa fa-phone"></i> <%= header.phoneNumber %> </div>
       </div>
     </div>
   </div>
@@ -65,7 +64,7 @@
         </div>
         <ul class="nav navbar-nav">
           <!-- DEFAULT CATEGORY -->
-          <li class="<%= section === 'home' ? 'active' : '' %>"><a href="/">TRANG CHỦ</a></li>
+          <li class="<%= section === 'home' ? 'active' : '' %>"><a href="/"><%= header.homeText.toUpperCase() %></a></li>
 
           <% for (let i = 0; i < categories.length; i++) { %>
           <li class="
@@ -74,14 +73,14 @@
               ">
             <a data-toggle="<%= categories[i].parent.type === 'title' ? 'dropdown' : '' %>"
               href="<%= converter.getUrlCategory(categories[i].parent, categories[i].parent) %>">
-              <%= categories[i].parent.nameVie.toUpperCase() %></a>
+              <%= categories[i].parent.name.toUpperCase() %></a>
             <% if (categories[i].children) { %>
             <ul class="dropdown-menu with-bg" role="menu">
               <% for (let j = 0; j < categories[i].children.length; j++) { %>
               <% var category = categories[i].children[j] %>
               <li>
                 <a href="<%= converter.getUrlCategory(categories[i].children[j], categories[i].parent) %>">
-                  <%= category.nameVie %></a>
+                  <%= category.name %></a>
               </li>
               <% } %>
             </ul>
@@ -90,7 +89,7 @@
           <% } %>
 
           <!-- DEFAULT CATEGORY -->
-          <li class="<%= section === 'contact' ? 'active' : '' %>"><a href="/contact">LIÊN HỆ</a></li>
+          <li class="<%= section === 'contact' ? 'active' : '' %>"><a href="/contact"><%= header.contactText.toUpperCase() %></a></li>
         </ul>
       </div>
     </div>

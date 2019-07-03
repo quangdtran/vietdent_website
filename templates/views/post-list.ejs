@@ -46,7 +46,9 @@
       <div class="row">
         <ol class="breadcrumb">
           <li class="breadcrumb-home"><a href="#"><i class="fa fa-home"></i></a></li>
-          <li class="active">Services</li>
+          <% for (let path of paths) { %>
+            <li class="active"><%= path %></li>
+          <% } %>
         </ol>
       </div>
     </div>
@@ -58,15 +60,13 @@
         <!-- template -->
         <% for (let post of posts) { %>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 serv-item isotope-item dental">
-          <div class="serv-item-image"> <img src="/images/serv1.jpg" alt=""> </div>
+          <div class="serv-item-image"> <img src="<%= post.image.url %>" alt=""> </div>
           <div class="serv-item-text">
-            <h3><%= post.titleVie %></h3>
-            <%- post.briefVie %>
+            <h3><%= post.title %></h3>
+            <%- post.brief %>
             <div class="serv-item-button">
-              <a
-                href="<%= '/post/' + converter.getSlug(post.titleVie) + '?section=' + section + '&postId=' + post.id %>"
-                class="btn btn-primary-1 btn-sm"
-              >READ MORE</a>
+              <a href="<%= '/post/' + converter.getSlug(post.titleVie) + '?section=' + section + '&postId=' + post.id %>"
+                class="btn btn-primary-1 btn-sm">READ MORE</a>
             </div>
           </div>
         </div>
@@ -112,85 +112,12 @@
 ============================== -->
 
   <!-- =========================
-    POPUP FORMS
-============================== -->
-  <!--<div class="bookform bookform-1" id="bookform1">
-  <div class="bookform-left">
-    <h2 class="section-title">
-      <span class="bold700">
-        BOOK APPOINTMENT
-      </span>
-    </h2>
-    <form>
-      <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 booking-form-item f-doctor">
-          <select id="form-doctor" class="form-doctor" name="form-doctor">
-            <option value="1" selected="selected">Select doctor</option>
-            <option value="2">Arnie Alban</option>
-            <option value="3">Wyatt Esmond</option>
-            <option value="4">Dustin Callahan</option>
-            <option value="5">Kristin Weaver</option>
-          </select>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 booking-form-item name">
-          <input type="text" name="name1" id="name1" data-validation="required" placeholder="Your name" />
-          <div class="help help-sm help-red">!</div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 booking-form-item phone">
-          <input type="text" name="phone1" id="phone1" data-validation="required" placeholder="Phone" />
-          <div class="help help-sm help-red">!</div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 booking-form-item email">
-          <input type="text" name="email1" id="email1" placeholder="E-mail" />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 booking-form-item date">
-          <input type="text" class="datepicker-f" id="datepicker1" name="date1" data-validation="required" placeholder="Date" />
-          <div class="help help-sm help-red">!</div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 booking-form-item time-f">
-          <input type="text" class="timepicker-f" id="timepicker1" name="time1" data-validation="required" placeholder="Time" />
-          <div class="help help-sm help-red">!</div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 booking-form-item">
-          <textarea name="message1" id="message1" placeholder="Your message.."></textarea>
-        </div>
-      </div>
-      <div class="row" style="display:none;">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 booking-form-item honeypot">
-          <label class="fl_label" for="last">Honeypot:</label>
-          <input type="text" name="last" value="" id="last" class="form-control fl_input">
-        </div>
-      </div>
-      <div class="row latest-row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 booking-form-item">
-          <button class="btn btn-primary">
-            SUBMIT
-          </button>
-          <a class="fb-close" id="fb-close" href="javascript:jQuery.fancybox.close();">Cancel</a> </div>
-      </div>
-    </form>
-  </div>
-  <div class="bookform-right">
-    <div class="bookform-right-info-1">
-      <h5>Please select a doctor</h5>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
-    <div class="bookform-right-info-2"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
-  </div>
-</div>-->
-
+      POPUP FORMS
+      ============================== -->
+  <%- include partials/bookform %>
   <!-- =========================
-    END POPUP FORMS
-============================== -->
+        END POPUP FORMS
+    ============================== -->
 
   <div class="totop" id="totop"> <i class="fa fa-angle-up"></i> </div>
 

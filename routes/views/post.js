@@ -6,6 +6,7 @@ exports = module.exports = function (req, res) {
 
 	const view = new keystone.View(req, res);
 	const locals = res.locals;
+	const { lang } = req.cookies;
 
 	// Set locals
 	keystone.list('Post').model.findOne({ _id: postId }, (err, post) => {
@@ -14,8 +15,24 @@ exports = module.exports = function (req, res) {
 		locals.section = section;
 		locals.post = post;
 
-		// Render the view
-		view.render('post');
+		// gey path
+		keystone.list('Category').model.find({ _id: { $in: [section, post.category] } }, (err, categories) => {
+			let typeName = 'nameVie';
+			let typeTitle = 'titleVie';
+			if (lang) {
+				typeName = (lang === 'english' ? 'nameEng' : 'nameVie');
+				typeTitle = (lang === 'english' ? 'titleEng' : 'titleVie');
+			}
+
+			console.log(categories);
+
+			locals.paths = categories.map((category) => category[typeName]);
+			locals.paths.push(post[typeTitle]);
+
+			// Render the view
+			view.render('post');
+		});
+
 	});
 
 };

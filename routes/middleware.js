@@ -10,6 +10,7 @@
 // const _ = require('lodash');
 const keystone = require('keystone');
 const converter = require('../utils/converter');
+const header = require('../templates/data/header.json');
 
 
 /**
@@ -32,7 +33,17 @@ exports.flashMessages = function (req, res, next) {
 	keystone.list('Category').model.find({}, (err, categories) => {
 		if (err) throw err;
 		res.locals.categories = [];
+
+		const { lang } = req.cookies;
+		let typeName = 'nameVie';
+
+		if (lang) {
+			typeName = (lang === 'english' ? 'nameEng' : 'nameVie');
+			res.locals.header = ((lang === 'english' ? header.en : header.vi));
+		}
+
 		categories = categories
+			.map((category) => Object.assign(category, { name: category[typeName] }))
 			.sort((a, b) => {
 				let num1 = 0;
 				let num2 = 0;

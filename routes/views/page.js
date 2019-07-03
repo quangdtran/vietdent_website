@@ -7,12 +7,28 @@ exports = module.exports = function (req, res) {
 	const { categoryId, section } = req.query;
 	keystone.list('Page').model.findOne({ category: categoryId }, (err, page) => {
 		if (err) throw err;
-		locals.section = section;
-		locals.page = page;
-		view.render('page');
-	});
-  // locals.section is used to set the currently selected
-  // item in the heade	r navigation.
+		if (!page) throw new Error('Not found a page');
+		const { lang } = req.cookies;
+		let typeContent = 'htmlContentVie';
 
-  // Render the view
+		if (lang) {
+			typeContent = (lang === 'english' ? 'htmlContentEng' : 'htmlContentVie');
+		}
+		locals.section = section;
+		locals.page = Object.assign(page, { htmlContent: page[typeContent] });
+		console.log(locals.page.htmlContent);
+
+		// gey path
+		keystone.list('Category').model.find({ _id: { $in: [section, categoryId] } }, (err, categories) => {
+			let typeName = 'nameVie';
+			if (lang) {
+				typeName = (lang === 'english' ? 'nameEng' : 'nameVie');
+			}
+
+			locals.paths = categories.map((category) => category[typeName]);
+
+			// Render the view
+			view.render('page');
+		});
+	});
 };

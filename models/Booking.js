@@ -7,7 +7,8 @@ const Booking = new keystone.List('Booking', {
 });
 
 Booking.add({
-	bookingTime: { type: Date },
+	customerName: { type: Types.Name, required: true },
+	bookingTime: { type: Date, required: true },
 	customerEmail: { type: Types.Email, required: true },
 	isAccepted: { type: Boolean },
 	message: { type: String },
