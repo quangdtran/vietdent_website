@@ -24,7 +24,8 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "start": "nodemon --exec babel-node keystone.js",
+    "dev": "nodemon --exec babel-node keystone.js",
+    "start": "babel-node keystone.js",
     "compile": "stylus -w public/styles/site.styl -o public/styles/site.css"
   }
 }
