@@ -36,6 +36,7 @@ exports.flashMessages = function (req, res, next) {
 
 		const { lang } = req.cookies;
 		let typeName = 'nameVie';
+		res.locals.header = header.vi;
 
 		if (lang) {
 			typeName = (lang === 'english' ? 'nameEng' : 'nameVie');
