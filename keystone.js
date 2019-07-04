@@ -43,6 +43,7 @@ keystone.init({
 	'user model': 'Account',
 	'mongo': process.env.MONGO_URI || 'mongodb://localhost:27017/hospital-website',
 });
+// keystone.set('mongo', process.env.MONGO_URI || 'mongodb://localhost:27017/hospital-website');
 
 // Load your project's Models
 keystone.import('models');
