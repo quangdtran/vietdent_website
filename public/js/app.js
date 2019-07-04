@@ -28,4 +28,26 @@ $(document).ready(function () {
     setCookie('lang=english');
     window.location.reload();
   });
+
+  // initial:
+  console.log('path: ', window.location);
+  const url = window.location.pathname + window.location.search;
+  $('#current-url-value').val(url);
+
+  $('.close-my-alert').on('click', function () {
+    $('#wrap-my-alert').css({ display: 'none' });
+    var pathname = url.split('?')[0];
+    let search = url.split('?')[1];
+    let querystring = '';
+    if (search) {
+      search.split('&').forEach(param => {
+        if (!param.includes('popup')) {
+          querystring += (querystring === '') ? ('?' + param) : ('&' + param);
+        }
+      });
+    }
+    urlRemovePopup = pathname + querystring;
+    window.history.pushState(null, null, urlRemovePopup);
+  });
+
 });

@@ -69,6 +69,12 @@ exports.flashMessages = function (req, res, next) {
 		});
 		// console.log(res.locals.categories);
 		res.locals.converter = converter;
+
+		// set error
+		const { popup } = req.query;
+		if (popup) res.locals.popup = popup;
+		else res.locals.popup = false;
+
 		next();
 	});
 };

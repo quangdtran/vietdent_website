@@ -1,0 +1,23 @@
+
+<% if (popup) { %>
+  <div id="wrap-my-alert" class="close-my-alert fancybox-overlay fancybox-overlay-fixed" style="width: auto; height: auto; display: block;">
+    <div class="fancybox-wrap fancybox-desktop fancybox-type-inline fancybox-opened" tabindex="-1"
+      style="width: auto; height: auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 1; overflow: visible;">
+      <div class="fancybox-skin" style="padding: 15px; width: auto; height: auto;">
+        <div class="fancybox-outer">
+          <div class="fancybox-inner" style="overflow: hidden; width: auto; height: auto;">
+            <% if (popup === 'contact-success') { %>
+              <p class="fancybox-error">Chúng tôi đã nhận được liên hệ và sẽ phản hồi trong thời gian ngắn nhất</p>
+            <% } else if (popup === 'contact-fail') { %>
+              <p class="fancybox-error">Xảy ra sự cố khi liên hệ<br>Vui lòng thử lại sau.</p>
+            <% } else if (popup === 'book-success') { %>
+              <p class="fancybox-error">Đặt lịch thành công.<br>Chúng tôi sẽ liên hệ để xác nhận lịch hẹn trong 24h.</p>
+            <% } else if (popup === 'book-fail') { %>
+              <p class="fancybox-error">Xảy ra sự cố khi đặt lịch.<br>Vui lòng thử lại sau.</p>
+            <% } %>
+          </div>
+        </div><a title="Close" class="close-my-alert fancybox-close-btn" href="javascript:;"><i class="fa fa-close"></i></a>
+      </div>
+    </div>
+  </div>
+<% } %>

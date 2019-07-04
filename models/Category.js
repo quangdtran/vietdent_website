@@ -23,13 +23,13 @@ Category.add({
 	type: {
 		label: 'Loại',
 		type: Types.Select, options: [
-			{ label: 'post', value: 'post' },
-			{ label: 'page', value: 'page' },
-			{ label: 'title', value: 'title' },
+			{ label: 'Post', value: 'post' },
+			{ label: 'Page', value: 'page' },
+			{ label: 'Title', value: 'title' },
 		], required: true, initial: true },
 	sortOrder: { type: Number, label: 'Thứ tự hiển thị' },
-	createdAt: { type: Date, label: 'Tạo vào lúc', default: Date.now },
-	createBy: { type: Types.Relationship, label: 'Tạo bởi tài khoản', ref: 'Account' },
+	createdAt: { type: Date, label: 'Tạo lúc', default: Date.now, noedit: true },
+	createBy: { type: Types.Relationship, label: 'Tạo bởi', ref: 'Account' },
 	nameDisplay: { type: String, hidden: true, watch: 'nameVie', initial: false, noedit: true, value: setNameDisplay },
 });
 

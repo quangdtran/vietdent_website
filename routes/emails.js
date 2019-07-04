@@ -11,30 +11,33 @@
  * can be previewed at /keystone/test-email/{key}
  */
 
-const keystone = require('keystone');
+// const keystone = require('keystone');
 
 module.exports = {
 
 	/** New Enquiry Notifications */
-	'enquiry-notification': function (req, res, callback) {
+	'contact-notification': function (req, res, callback) {
 		// To test enquiry notifications we create a dummy enquiry that
 		// is not saved to the database, but passed to the template.
 
-		const Enquiry = keystone.list('Enquiry');
+		const Email = require('keystone-email');
+		new Email('contact-notification.ejs', {
+			transport: 'mailgun',
+		}).send(
+			{
 
-		const newEnquiry = new Enquiry.model({
-			name: { first: 'Test', last: 'User' },
-			email: 'contact@hospital-website.com',
-			phone: '+61 2 1234 5678',
-			enquiryType: 'message',
-			message: { md: 'Nice enquiry notification.' },
-		});
-
-		callback(null, {
-			admin: 'Admin User',
-			enquiry: newEnquiry,
-			enquiry_url: '/keystone/enquiries/',
-		});
+			},
+			{
+				apiKey: '',
+				domain: '',
+				to: '',
+				from: {
+					name: 'vietdent.com',
+					email: 'vietdent@gmail..com',
+				},
+				subject: 'Your first KeystoneJS email',
+			},
+			callback);
 	},
 
 };

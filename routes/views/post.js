@@ -13,15 +13,21 @@ exports = module.exports = function (req, res) {
 		if (err) throw err;
 
 		locals.section = section;
-		locals.post = post;
+		let typeContent = 'contentVie';
+
+		if (lang) {
+			typeContent = (lang === 'english' ? 'contentEng' : 'contentVie');
+		}
+		locals.post = Object.assign(post, { contentDisplay: post[typeContent] });
+		console.log('post', locals.post.contentDisplay);
 
 		// gey path
 		keystone.list('Category').model.find({ _id: { $in: [section, post.category] } }, (err, categories) => {
 			let typeName = 'nameVie';
 			let typeTitle = 'titleVie';
 			if (lang) {
-				typeName = (lang === 'english' ? 'nameEng' : 'nameVie');
 				typeTitle = (lang === 'english' ? 'titleEng' : 'titleVie');
+				typeName = (lang === 'english' ? 'nameEng' : 'nameVie');
 			}
 
 			console.log(categories);

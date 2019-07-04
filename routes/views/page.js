@@ -16,9 +16,8 @@ exports = module.exports = function (req, res) {
 		}
 		locals.section = section;
 		locals.page = Object.assign(page, { htmlContent: page[typeContent] });
-		console.log(locals.page.htmlContent);
 
-		// gey path
+		// get path
 		keystone.list('Category').model.find({ _id: { $in: [section, categoryId] } }, (err, categories) => {
 			let typeName = 'nameVie';
 			if (lang) {
