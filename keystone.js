@@ -41,6 +41,7 @@ keystone.init({
 	'session': true,
 	'auth': true,
 	'user model': 'Account',
+	'mongo': process.env.MONGO_URI || 'mongodb://localhost:27017/hospital-website',
 });
 
 // Load your project's Models
