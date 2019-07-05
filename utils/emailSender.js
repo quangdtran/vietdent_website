@@ -43,8 +43,6 @@ module.exports = {
     });
   },
   confirmBooking(booking, callback) {
-    console.log('user:', process.env.EMAIL_SENDER);
-    console.log('pass: ', process.env.EMAIL_SENDER_PASSWORD);
     let html, subject;
 
     if (booking.state === 'accept') {
@@ -75,6 +73,7 @@ module.exports = {
 
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
+        console.log(error);
         return callback(error);
       }
       callback(null, info);
