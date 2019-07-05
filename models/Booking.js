@@ -31,7 +31,7 @@ Booking.add({
 // 	// throw new Error('Không thể gửi email');
 // });
 
-Booking.schema.post('validate', (booking, next) => {
+Booking.schema.post('save', (booking, next) => {
 	if (booking.state !== 'pending') {
 		// check email existence
 		emailExistence.check(booking.customerEmail, (err, result) => {
