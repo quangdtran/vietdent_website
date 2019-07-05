@@ -7,15 +7,19 @@ exports = module.exports = function (req, res) {
 	const { categoryId, section } = req.query;
 	keystone.list('Page').model.findOne({ category: categoryId }, (err, page) => {
 		if (err) throw err;
-		if (!page) throw new Error('Not found a page');
 		const { lang } = req.cookies;
 		let typeContent = 'htmlContentVie';
-
+		locals.section = section;
 		if (lang) {
 			typeContent = (lang === 'english' ? 'htmlContentEng' : 'htmlContentVie');
 		}
-		locals.section = section;
-		locals.page = Object.assign(page, { htmlContent: page[typeContent] });
+
+		if (!page) {
+			locals.page = { htmlContent: null };
+		} else {
+			locals.page = Object.assign(page, { htmlContent: page[typeContent] });
+		}
+
 
 		// get path
 		keystone.list('Category').model.find({ _id: { $in: [section, categoryId] } }, (err, categories) => {

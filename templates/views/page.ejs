@@ -47,7 +47,11 @@
     </div>
   </div>
 
-  <%- page.htmlContent %>
+  <% if (page.htmlContent) { %>
+    <%- page.htmlContent %>
+  <% } else { %>
+    <h3>Hiện trang này không có nội dung</h3>
+  <% } %>
   <!-- FOOTER
 ============================== -->
   <%- include partials/footer %>
