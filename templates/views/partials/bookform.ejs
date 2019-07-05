@@ -2,40 +2,40 @@
   <div class="bookform-left">
     <h2 class="section-title">
       <span class="bold700">
-        BOOK APPOINTMENT
+        <%= bookform['title'].toUpperCase() %>
       </span>
     </h2>
     <form method="POST" action="/submit-book-form">
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 booking-form-item name">
-          <input type="text" name="name" id="name1" data-validation="required" placeholder="Your name" />
+          <input type="text" name="name" id="name1" data-validation="required" placeholder="<%= bookform['input.name'] %>" />
           <div class="help help-sm help-red">!</div>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 booking-form-item phone">
-          <input type="text" name="phoneNumber" id="phone1" data-validation="required" placeholder="Phone" />
+          <input type="text" name="phoneNumber" id="phone1" data-validation="required" placeholder="<%= bookform['input.phone'] %>" />
           <div class="help help-sm help-red">!</div>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 booking-form-item email">
-          <input type="text" name="email" id="email1" data-validation="required" placeholder="E-mail" />
+          <input type="text" name="email" id="email1" data-validation="required" placeholder="<%= bookform['input.email'] %>" />
         </div>
       </div>
       <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 booking-form-item date">
-          <input type="text" class="datepicker-f" id="datepicker1" name="date" data-validation="required" placeholder="Date" />
+          <input type="text" class="datepicker-f" id="datepicker1" name="date" data-validation="required" placeholder="<%= bookform['input.date'] %>" />
           <div class="help help-sm help-red">!</div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 booking-form-item time-f">
-          <input type="text" class="timepicker-f" id="timepicker1" name="time" data-validation="required" placeholder="Time" />
+          <input type="text" class="timepicker-f" id="timepicker1" name="time" data-validation="required" placeholder="<%= bookform['input.time'] %>" />
           <div class="help help-sm help-red">!</div>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 booking-form-item">
-          <textarea name="message" id="message1" placeholder="Your message.."></textarea>
+          <textarea name="message" id="message1" placeholder="<%= bookform['input.message'] %>"></textarea>
         </div>
       </div>
       <div class="row" style="display:none;">
@@ -47,7 +47,7 @@
       <div class="row latest-row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 booking-form-item">
           <button class="btn btn-primary">
-            SUBMIT
+            <%= bookform['button.submit'].toUpperCase() %>
           </button>
           <a class="fb-close" id="fb-close1" href="javascript:jQuery.fancybox.close();">Cancel</a> </div>
       </div>
@@ -55,8 +55,9 @@
   </div>
   <div class="bookform-right">
     <div class="bookform-right-info-1">
-      <h5>Please fill your information</h5>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
-    <div class="bookform-right-info-2"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
+      <h5><%= bookform['text.tooltip.title'] %></h5>
+      <%= bookform['text.tooltip.content'] %>
+    </div>
+    <div class="bookform-right-info-2"> <%= bookform['text.note'] %> </div>
   </div>
 </div>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Creative Responsive Bootstrap Multi-Purpose HTML Template">
+  <meta name="keywords"
+    content="H2O, Creative, Agency, Portfolio, Freelancer, Shop, Store,Bootstrap, HTML, Template, One page">
+  <meta name="author" content="Vadzim Liashkevich">
+
+  <!-- SITE TITLE -->
+  <title>DentalClinic - Responsive Clinic HTML Template</title>
+
+  <!-- =========================
+      FAV AND TOUCH ICONS  
+============================== -->
+  <link rel="shortcut icon" href="images/favicon.ico">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+  <!-- =========================
+     STYLESHEETS   
+============================== -->
+
+  <link rel="stylesheet" type="text/css" href="css/master.css" />
+</head>
+
+<body data-spy="scroll" data-target=".navbar">
+  <!-- HEADER -->
+  <%- include partials/header %>
+  <!-- END HEADER -->
+
+  <!--<div class="page-title page-title-contacts bg-pattern" data-bgcolor="3B4B89">
+  <div class="page-title-overlay">
+    <div class="container">
+      <h1>CONTACT US</h1>
+      <p>Our Clinic has grown to provide a world class facility for the treatment of tooth loss, dental cosmetics and advanced restorative dentistry.</p>
+    </div>
+  </div>
+</div>-->
+  <div class="breadcrumbs">
+    <div class="container">
+      <div class="row">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-home"><a href="#"><i class="fa fa-home"></i></a></li>
+          <li class="active">Liên hệ</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="feedback">
+    <div class="container">
+      <div class="row">
+        <h2 class="section-title">
+          <span class="bold700">
+            LIÊN HỆ VỚI CHÚNG TÔI
+          </span>
+        </h2>
+        <p class="section-subtitle">Cam kết ứng dụng y học tiên tiến và khoa học quản trị để mang lại kết quả lâm sàng và chuẩn mực chăm sóc tốt nhất, đáp ứng nhu cầu khách hàng mục tiêu với giá cả phải chăng.</p>
+        <form method="POST" action="/submit-contact-form" >
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 booking-form-item name">
+                <input type="text" name="name" id="name" data-validation="required" placeholder="Tên của bạn" />
+                <div class="help help-sm help-red">!</div>
+              </div>
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 booking-form-item phone">
+                <input type="text" name="phone" id="phone" data-validation="required" placeholder="Số điện thoại" />
+                <div class="help help-sm help-red">!</div>
+              </div>
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 booking-form-item email">
+                <input type="text" name="email" id="email" data-validation="required" placeholder="E-mail" />
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 booking-form-item">
+                <textarea name="message" id="message" data-validation="required"
+                  placeholder="Tin nhắn.."></textarea>
+                <div class="help help-sm help-red">!</div>
+              </div>
+            </div>
+          </div>
+          <div class="row latest-row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 booking-form-item">
+              <button class="btn btn-primary">
+                XÁC NHẬN
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================
+    FOOTER
+============================== -->
+  <%- include partials/footer %>
+  <!-- =========================
+  END FOOTER
+============================== -->
+
+  <%- include partials/bookform %>
+  <%- include partials/alert %>
+
+  <div class="totop" id="totop"> <i class="fa fa-angle-up"></i> </div>
+
+  <!-- =========================
+    COLOR SWITHER
+============================== -->
+  <!--<div class="color-sw-open" id="color-sw-open"> <i class="fa fa-gear"></i> </div>
+<div class="color-sw" id="color-sw">
+  <div class="color-sw-header"> Style switcher
+    <span class="color-sw-close" id="color-sw-close">
+      <i class="fa fa-close"></i>
+    </span>
+  </div>
+  <div class="color-sw-body">
+    <p>Choose color style</p>
+    <div class="color-sw-item active" id="blue">
+      <div></div>
+    </div>
+    <div class="color-sw-item" id="violet">
+      <div></div>
+    </div>
+    <div class="color-sw-item" id="red">
+      <div></div>
+    </div>
+    <div class="color-sw-item" id="green">
+      <div></div>
+    </div>
+  </div>
+</div>-->
+  <!-- =========================
+    END COLOR SWITHER
+============================== -->
+
+  <link rel="stylesheet" type="text/css" href="css/responsive.css" />
+
+  <!-- MY JAVASCRIPT -->
+  <%- include resources/javascript %>
+
+  <!-- GOOGLE MAPS -->
+  <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIt0-3xYygh5jhA2YCRcEP9YsLO3mw0co&language=en&amp&sensor=true"></script>-->
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+</body>
+
+</html>

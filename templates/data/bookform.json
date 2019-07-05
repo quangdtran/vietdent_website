@@ -1,4 +1,31 @@
 {
-  "vi": {},
-  "en": {}
+  "vi": {
+    "title": "ĐẶT LỊCH KHÁM",
+    "input.name": "Tên của bạn",
+    "input.phone": "Số điện thoại",
+    "input.email": "E-mail",
+    "input.date": "Ngày khám",
+    "input.time": "Thời gian khám",
+    "input.message": "Tin nhắn của bạn...",
+    "button.submit": "XÁC NHẬN",
+    "button.cancel": "HỦY",
+    "text.tooltip.title": "Vui lòng điền vào biểu mẫu",
+    "text.tooltip.content": "Chúng tôi sẽ dựa vào thông tin cung cấp để liên hệ trong thời gian sớm nhất.",
+    "text.note": "Cam kết ứng dụng y học tiên tiến và khoa học quản trị để mang lại kết quả lâm sàng và chuẩn mực chăm sóc tốt nhất, đáp ứng nhu cầu khách hàng mục tiêu với giá cả phải chăng"
+  },
+  "en": {
+    "title": "BOOK APPOINTMENT",
+    "input.name": "Your name",
+    "input.phone": "Phone number",
+    "input.email": "E-mail",
+    "input.date": "Date",
+    "input.time": "Time",
+    "input.message": "Your message...",
+    "button.submit": "SUBMIT",
+    "button.cancel": "CANCEL",
+    "text.tooltip.title": "Please fill in the form",
+    "text.tooltip.content": "We will rely on the information provided to contact us as soon as possible.",
+    "text.note": "Commit to applying advanced medicine and management science to bring the best clinical results and standards of care to meet the needs of target customers at affordable prices."
+
+  }
 }

@@ -11,6 +11,7 @@
 const keystone = require('keystone');
 const converter = require('../utils/converter');
 const header = require('../templates/data/header.json');
+const bookform = require('../templates/data/bookform.json');
 
 
 /**
@@ -29,20 +30,25 @@ exports.initLocals = function (req, res, next) {
 /**
 	Fetches and clears the flashMessages before a view is rendered
 */
-exports.flashMessages = function (req, res, next) {
+exports.beforeRender = function (req, res, next) {
 	keystone.list('Category').model.find({}, (err, categories) => {
 		if (err) throw err;
-		res.locals.categories = [];
+		const locals = res.locals;
+
+		locals.categories = [];
 
 		const { lang } = req.cookies;
 		let typeName = 'nameVie';
-		res.locals.header = header.vi;
+		locals.header = header.vi;
+		locals.bookform = bookform.vi;
 
 		if (lang) {
 			typeName = (lang === 'english' ? 'nameEng' : 'nameVie');
-			res.locals.header = ((lang === 'english' ? header.en : header.vi));
+			locals.header = ((lang === 'english' ? header.en : header.vi));
+			locals.bookform = ((lang === 'english' ? bookform.en : bookform.vi));
 		}
 
+		// set categories for menu
 		categories = categories
 			.map((category) => Object.assign(category, { name: category[typeName] }))
 			.sort((a, b) => {
@@ -62,19 +68,19 @@ exports.flashMessages = function (req, res, next) {
 		});
 		categories.forEach(category => {
 			if (category.isParent) {
-				res.locals.categories.push({
+				locals.categories.push({
 					parent: category,
 					children: mapCategory[category.id],
 				});
 			}
 		});
-		// console.log(res.locals.categories);
-		res.locals.converter = converter;
 
-		// set error
+		locals.converter = converter;
+
+		// set popup alert
 		const { popup } = req.query;
-		if (popup) res.locals.popup = popup;
-		else res.locals.popup = false;
+		if (popup) locals.popup = popup;
+		else locals.popup = false;
 
 		next();
 	});

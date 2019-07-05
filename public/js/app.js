@@ -9,7 +9,7 @@ function setCookie (cookie) {
     el = el.split('=');
     let name = el[0];
     let value = el[1];
-    document.cookie = name + '=' + value + ';expires=' + date.toGMTString() + ';path=/' + ';domain=0.0.0.0';
+    document.cookie = name + '=' + value + ';expires=' + date.toGMTString() + ';path=/' + ';domain=' + window.location.hostname;
   }
   console.log('Đã chèn thành công !!');
 }
