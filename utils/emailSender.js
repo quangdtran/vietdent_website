@@ -43,6 +43,8 @@ module.exports = {
     });
   },
   confirmBooking(booking, callback) {
+    console.log('user:', process.env.EMAIL_SENDER);
+    console.log('pass: ', process.env.EMAIL_SENDER_PASSWORD);
     let html, subject;
 
     if (booking.state === 'accept') {
