@@ -2,10 +2,10 @@
 module.exports = {
   getUrlCategory (child, parent) {
     if (child.type === 'post') {
-      return `/post-list/${this.getSlug(child.nameVie)}?categoryId=${child.id}&section=${parent.id}`;
+      return `/post-list/${child.id}/${parent.id}/${this.getSlug(child.nameVie)}`;
     }
     else if (child.type === 'page') {
-      return `/page/${this.getSlug(child.nameVie)}?categoryId=${child.id}&section=${parent.id}`;
+      return `/page/${child.id}/${parent.id}/${this.getSlug(child.nameVie)}`;
     }
     else return '#';
   },

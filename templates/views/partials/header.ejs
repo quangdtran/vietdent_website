@@ -9,15 +9,21 @@
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
         <div class="top-bar-social">
-          <a id="lang-vi" href="#">vi-VN</a>
-          <div style="width: 2px; display: inline-block;"></div>
-          <a id="lang-en" href="#">en-US</a>
+          <% if (lang === 'english') { %>
+          <a id="lang-vi" href="#">
+            <img style="width: 20px; height: 20px;" src="/images/vi-icon.png" alt="">
+          </a>
+          <% } else { %>
+          <a id="lang-en" href="#">
+            <img style="width: 20px; height: 20px;" src="/images/en-icon.png" alt="">
+          </a>
+          <% } %>
         </div>
         <div class="top-bar-social"> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#">
             <i class="fa fa-google-plus"></i></a> <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i
               class="fa fa-skype"></i></a> </div>
         <div class="top-bar-mail">
-          <i class="fa fa-envelope"></i> 
+          <i class="fa fa-envelope"></i>
           <a id="lang-vi" href="#">vietdent@gmail.com</a>
         </div>
       </div>
@@ -68,7 +74,8 @@
         </div>
         <ul class="nav navbar-nav">
           <!-- DEFAULT CATEGORY -->
-          <li class="<%= section === 'home' ? 'active' : '' %>"><a href="/"><%= header.homeText.toUpperCase() %></a></li>
+          <li class="<%= section === 'home' ? 'active' : '' %>"><a href="/"><%= header.homeText.toUpperCase() %></a>
+          </li>
 
           <% for (let i = 0; i < categories.length; i++) { %>
           <li class="
@@ -93,7 +100,8 @@
           <% } %>
 
           <!-- DEFAULT CATEGORY -->
-          <li class="<%= section === 'contact' ? 'active' : '' %>"><a href="/contact"><%= header.contactText.toUpperCase() %></a></li>
+          <li class="<%= section === 'contact' ? 'active' : '' %>"><a
+              href="/contact"><%= header.contactText.toUpperCase() %></a></li>
         </ul>
       </div>
     </div>

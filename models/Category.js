@@ -29,7 +29,7 @@ Category.add({
 		], required: true, initial: true },
 	sortOrder: { type: Number, label: 'Thứ tự hiển thị' },
 	createdAt: { type: Date, label: 'Tạo lúc', default: Date.now, noedit: true },
-	createBy: { type: Types.Relationship, label: 'Tạo bởi', ref: 'Account' },
+	createdBy: { type: Types.Relationship, label: 'Tạo bởi', ref: 'Account' },
 	nameDisplay: { type: String, hidden: true, watch: 'nameVie', initial: false, noedit: true, value: setNameDisplay },
 });
 

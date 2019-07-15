@@ -1,10 +1,9 @@
 const keystone = require('keystone');
 
 exports = module.exports = function (req, res) {
-
 	const view = new keystone.View(req, res);
 	const locals = res.locals;
-	const { categoryId, section } = req.query;
+	const { categoryId, section } = req.params;
 	keystone.list('Page').model.findOne({ category: categoryId }, (err, page) => {
 		if (err) throw err;
 		const { lang } = req.cookies;

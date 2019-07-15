@@ -38,6 +38,7 @@ exports.beforeRender = function (req, res, next) {
 		locals.categories = [];
 
 		const { lang } = req.cookies;
+		locals.lang = lang;
 		let typeName = 'nameVie';
 		locals.header = header.vi;
 		locals.bookform = bookform.vi;

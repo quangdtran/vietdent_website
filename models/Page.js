@@ -9,7 +9,7 @@ Page.add({
 	htmlContentVie: { label: 'Nội dung tiếng việt', type: Types.Html, wysiwyg: true, height: 400 },
 	htmlContentEng: { label: 'Nội dung tiếng anh', type: Types.Html, wysiwyg: true, height: 400 },
 	createdAt: { label: 'Tạo lúc', type: Date, default: Date.now, noedit: true },
-	createBy: { label: 'Tạo bởi', type: Types.Relationship, ref: 'Account' },
+	createdBy: { label: 'Tạo bởi', type: Types.Relationship, ref: 'Account' },
 });
 
 Page.defaultColumns = 'title, category, createdAt, createBy';

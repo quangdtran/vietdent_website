@@ -17,9 +17,9 @@ exports = module.exports = function (app) {
 	// Views
 	app.get('/', routes.views.index);
 	app.get('/home', routes.views.index);
-	app.get('/page/:category?', routes.views.page);
-	app.get('/post-list/:category?', routes.views.postList);
-	app.get('/post/:postTitle?', routes.views.post);
+	app.get('/page/:categoryId/:section/:category?', routes.views.page);
+	app.get('/post-list/:categoryId/:section/:category?', routes.views.postList);
+	app.get('/post/:postId/:section/:postTitle?', routes.views.post);
 	app.all('/contact', routes.views.contact);
 	app.get('/blog/post/:post', routes.views.post);
 	app.get('/blog/:category?', routes.views.blog);
