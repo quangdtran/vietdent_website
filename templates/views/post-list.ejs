@@ -77,7 +77,7 @@
         <li>
           <a class="first" href="<%=
             page > 1
-              ? '?categoryId=' + categoryId + '&section=' + section + '&page=' + (page - 1)
+              ? '?page=' + (page - 1)
               : '#'
           %>"> <i class="fa fa-angle-left"></i> </a>
         </li>
@@ -85,7 +85,7 @@
         <li>
           <a class="<%= (i + 1) === page ? 'active' : '' %>" href="<%=
             (i + 1) !== page
-                ? '?categoryId=' + categoryId + '&section=' + section + '&page=' + (i + 1)
+                ? '?page=' + (i + 1)
                 : '#'
           %>"><%= (i + 1) %></a></li>
         <% } %>
@@ -94,7 +94,7 @@
         <li>
           <a class="last" href="<%=
             page < numberOfPages
-              ? '?categoryId=' + categoryId + '&section=' + section + '&page=' + (page + 1)
+              ? '?page=' + (page + 1)
               : '#'
           %>"> <i class="fa fa-angle-right"></i> </a>
         </li>
