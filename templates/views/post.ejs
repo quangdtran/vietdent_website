@@ -76,7 +76,7 @@
                 <img src="/images/no-image.jpg" alt="" />
                 <% } %> </div>
               <div class="blog-item-title">
-                <h3><a href="#"><%= postRelation.title %></a></h3>
+                <h3><a href="<%= '/post/' + postRelation.id + '/' + section + '/' + converter.getSlug(postRelation.titleVie) %>"><%= postRelation.title %></a></h3>
               </div>
               <!--<div class="blog-item-author"><a href="#">by Dr. Kaeden Bernard</a></div>
                 <div class="blog-item-text">Dental implant placement is no longer performed only by oral surgeons and periodontists; general dentists are also increasingly providing difficult surgical implant services. Dental implants may be used to replace single teeth, replace multiple teeth.</div>

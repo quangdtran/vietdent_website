@@ -29,7 +29,7 @@ keystone.init({
 	'wysiwyg additional options': { external_plugins: { uploadimage: '/js/uploadimage/plugin.min.js' } },
 
 	'stylus': 'public',
-	'static': 'public',
+	'static': ['public', 'site'],
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': 'ejs',
@@ -41,6 +41,7 @@ keystone.init({
 	'session': true,
 	'auth': true,
 	'user model': 'Account',
+	// 'mongo': 'mongodb://localhost:27017/hospital-website',
 	'mongo': process.env.MONGO_URI || 'mongodb://localhost:27017/hospital-website',
 });
 // keystone.set('mongo', process.env.MONGO_URI || 'mongodb://localhost:27017/hospital-website');
@@ -86,5 +87,8 @@ if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
 		+ '\nset up your mailgun integration');
 }
 
+keystone.set('cors allow origin', true);
+keystone.set('cors allow methods', true);
+keystone.set('cors allow headers', true);
 
 keystone.start();

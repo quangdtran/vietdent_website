@@ -11,7 +11,7 @@ function setCookie (cookie) {
     let value = el[1];
     document.cookie = name + '=' + value + ';expires=' + date.toGMTString() + ';path=/' + ';domain=' + window.location.hostname;
   }
-  console.log('Đã chèn thành công !!');
+  // console.log('Đã chèn thành công !!');
 }
 
 $(document).ready(function () {
@@ -30,7 +30,7 @@ $(document).ready(function () {
   });
 
   // initial:
-  console.log('path: ', window.location);
+  // console.log('path: ', window.location);
   const url = window.location.pathname + window.location.search;
   $('#current-url-value').val(url);
 

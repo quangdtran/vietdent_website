@@ -113,134 +113,16 @@
   <!-- =========================
      SERVICES
 ============================== -->
-  <div class="services" id="services">
-
-    <!-- SERVICES ITEM -->
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 service bg-primary-2"
-      onclick="javascript:location.href='services.html';" style="cursor:pointer">
-      <div class="service-icon"> <i class="flaticon-medical-1"></i> </div>
-      <div class="service-title">
-        <h3>teeth whitening</h3>
-      </div>
-      <div class="service-text"> Tooth whitening can be a very effective way of lightening the natural colour of your
-        teeth without removing any of the tooth surface. </div>
-    </div>
-
-    <!-- SERVICES ITEM -->
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 service bg-child-2"
-      onclick="javascript:location.href='services.html';" style="cursor:pointer">
-      <div class="service-icon"> <i class="flaticon-medical-2"></i> </div>
-      <div class="service-title">
-        <h3>implants</h3>
-      </div>
-      <div class="service-text"> Dental implants may be an option for people who have lost a tooth or teeth due to
-        periodontal disease, an injury, or some other reason. </div>
-    </div>
-
-    <!-- SERVICES ITEM -->
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 service bg-child-3"
-      onclick="javascript:location.href='services.html';" style="cursor:pointer">
-      <div class="service-icon"> <i class="flaticon-tool"></i> </div>
-      <div class="service-title">
-        <h3>extractions</h3>
-      </div>
-      <div class="service-text"> In orthodontics if the teeth are crowded, sound teeth may be extracted to create space
-        so the rest of the teeth can be straightened. </div>
-    </div>
-
-    <!-- SERVICES ITEM -->
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 service bg-child-4"
-      onclick="javascript:location.href='services.html';" style="cursor:pointer">
-      <div class="service-icon"> <i class="flaticon-medical"></i> </div>
-      <div class="service-title">
-        <h3>gum disease</h3>
-      </div>
-      <div class="service-text"> Plaque is the primary cause of gum disease. However, other factors can contribute to
-        periodontal disease. </div>
-    </div>
+  <div class="serv" id="services">
+    <ul id="isotope-filter">
+      <% for (let service of services) { %>
+      <li><a data-filter="*" data-service-id="<%= service._id %>"><%= service.nameDisplay %></a></li>
+      <% } %>
+    </ul>
   </div>
   <!-- =========================
      END SERVICES
 ============================== -->
-
-  <!-- =========================
-     ABOUT
-============================== -->
-  <div class="about">
-    <div class="container">
-      <div class="row">
-
-        <!-- ABOUT TEXT -->
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 about-text">
-          <h2 class="section-title">
-            <span class="bold700">
-              ABOUT
-            </span>
-            OUR CLINIC</h2>
-          <p>We provide team-based, comprehensive dental care for children and adults, including patients of all ages
-            who are anxious or have an underlying developmental or medical condition that may add complexity to the
-            management of their oral health.</p>
-          <ul class="text-list">
-            <li>General Dentistry - preventative and restorative dental care.</li>
-            <li>Specialized dental care to straighten crooked teeth in children and adults. </li>
-            <li>Treat diseases of the gums and the placement of dental implants.</li>
-          </ul>
-          <p>We are committed to helping you maintain your oral health as an integral part of your overall health and
-            wellness. <a href="aboutus.html">Read more &gt;</a></p>
-        </div>
-
-        <!-- ABOUT BACKGROUND -->
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 about-bg"> </div>
-      </div>
-    </div>
-  </div>
-  <!-- =========================
-     END ABOUT
-============================== -->
-
-  <!-- =========================
-     CERTIFICATES
-============================== -->
-  <div class="certs">
-    <div class="container">
-      <div class="row">
-        <h3>Certificates of completion</h3>
-        <div class="certs-container">
-          <div class="owl-certs" id="owl-certs">
-            <!-- CERTIFICATES ITEM -->
-            <div class="certs-item"> <a href="images/cert1-b.jpg" class="fancybox"><img src="images/cert1.jpg"
-                  alt="" /></a> </div>
-            <!-- CERTIFICATES ITEM -->
-            <div class="certs-item"> <a href="images/cert2-b.jpg" class="fancybox"><img src="images/cert2.jpg"
-                  alt="" /></a> </div>
-            <!-- CERTIFICATES ITEM -->
-            <div class="certs-item"> <a href="images/cert3-b.jpg" class="fancybox"><img src="images/cert3.jpg"
-                  alt="" /></a> </div>
-            <!-- CERTIFICATES ITEM -->
-            <div class="certs-item"> <a href="images/cert4-b.jpg" class="fancybox"><img src="images/cert4.jpg"
-                  alt="" /></a> </div>
-            <!-- CERTIFICATES ITEM -->
-            <div class="certs-item"> <a href="images/cert5-b.jpg" class="fancybox"><img src="images/cert5.jpg"
-                  alt="" /></a> </div>
-            <!-- CERTIFICATES ITEM -->
-            <div class="certs-item"> <a href="images/cert1-b.jpg" class="fancybox"><img src="images/cert1.jpg"
-                  alt="" /></a> </div>
-            <!-- CERTIFICATES ITEM -->
-            <div class="certs-item"> <a href="images/cert2-b.jpg" class="fancybox"><img src="images/cert2.jpg"
-                  alt="" /></a> </div>
-          </div>
-          <!-- CERTIFICATES BUTTONS -->
-          <div class="carousel-btn carousel-next" id="next-certs"><i class="fa fa-angle-right"></i></div>
-          <div class="carousel-btn carousel-prev" id="prev-certs"><i class="fa fa-angle-left"></i></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- =========================
-     END CERTIFICATES
-============================== -->
-
-
 
   <!-- =========================
     BLOG
@@ -258,72 +140,91 @@
         <div class="blog-container">
           <div class="owl-blog" id="owl-blog">
 
-            <!-- BLOG ITEM -->
-            <div class="blog-item">
-              <div class="blog-item-image"> <img src="images/blog1.jpg" alt="" />
-                <!--<div class="blog-item-date"><i class="fa fa-calendar-o"></i> 03.10.2016</div>
-              <div class="blog-item-comments"><i class="fa fa-comments-o"></i> 7</div>-->
-              </div>
-              <div class="blog-item-title">
-                <h3><a href="detail.html">The Importance of Routine<br>
-                    Dental Exams</a></h3>
-              </div>
-              <!--<div class="blog-item-author"><a href="#">by Dr. Kaeden Bernard</a></div>-->
-              <div class="blog-item-text">Dental implant placement is no longer performed only by oral surgeons and
-                periodontists; general dentists are also increasingly providing difficult surgical implant services.
-                Dental implants may be used to replace single teeth, replace multiple teeth.</div>
-              <!--<div class="blog-item-button"><a href="#" class="btn btn-primary-1">READ MORE</a></div>-->
-            </div>
 
             <!-- BLOG ITEM -->
             <div class="blog-item">
-              <div class="blog-item-image"> <img src="images/blog2.jpg" alt="" />
+              <div class="blog-item-image">
                 <!--<div class="blog-item-date"><i class="fa fa-calendar-o"></i> 03.10.2016</div>
               <div class="blog-item-comments"><i class="fa fa-comments-o"></i> 12</div>-->
               </div>
               <div class="blog-item-title">
-                <h3><a href="detail.html">We are giving each of our patients<br>
-                    the healthy smile!</a></h3>
+                <h3><a href="detail.html"><br></a></h3>
               </div>
               <!--<div class="blog-item-author"><a href="#">by Dr. Kaeden Bernard</a></div>-->
-              <div class="blog-item-text">Dental implant placement is no longer performed only by oral surgeons and
-                periodontists; general dentists are also increasingly providing difficult surgical implant services.
-                Dental implants may be used to replace single teeth, replace multiple teeth.</div>
+              <div class="blog-item-text"></div>
               <!--<div class="blog-item-button"><a href="#" class="btn btn-primary-1">READ MORE</a></div>-->
             </div>
 
             <!-- BLOG ITEM -->
             <div class="blog-item">
-              <div class="blog-item-image"> <img src="images/blog3.jpg" alt="" />
+              <div class="blog-item-image">
                 <!--<div class="blog-item-date"><i class="fa fa-calendar-o"></i> 03.10.2016</div>
-              <div class="blog-item-comments"><i class="fa fa-comments-o"></i> 7</div>-->
+                <div class="blog-item-comments"><i class="fa fa-comments-o"></i> 12</div>-->
               </div>
               <div class="blog-item-title">
-                <h3><a href="detail.html">Protect Your Child's Teeth with Dental Sealants</a></h3>
+                <h3><a href="detail.html"></a></h3>
               </div>
               <!--<div class="blog-item-author"><a href="#">by Dr. Kaeden Bernard</a></div>-->
-              <div class="blog-item-text">Dental implant placement is no longer performed only by oral surgeons and
-                periodontists; general dentists are also increasingly providing difficult surgical implant services.
-                Dental implants may be used to replace single teeth, replace multiple teeth.</div>
+              <div class="blog-item-text"></div>
               <!--<div class="blog-item-button"><a href="#" class="btn btn-primary-1">READ MORE</a></div>-->
             </div>
 
             <!-- BLOG ITEM -->
             <div class="blog-item">
-              <div class="blog-item-image"> <img src="images/blog2.jpg" alt="" />
+              <div class="blog-item-image">
                 <!--<div class="blog-item-date"><i class="fa fa-calendar-o"></i> 03.10.2016</div>
-              <div class="blog-item-comments"><i class="fa fa-comments-o"></i> 12</div>-->
+                <div class="blog-item-comments"><i class="fa fa-comments-o"></i> 12</div>-->
               </div>
               <div class="blog-item-title">
-                <h3><a href="detail.html">We are giving each of our patients<br>
-                    the healthy smile!</a></h3>
+                <h3><a href="detail.html"></a></h3>
               </div>
               <!--<div class="blog-item-author"><a href="#">by Dr. Kaeden Bernard</a></div>-->
-              <div class="blog-item-text">Dental implant placement is no longer performed only by oral surgeons and
-                periodontists; general dentists are also increasingly providing difficult surgical implant services.
-                Dental implants may be used to replace single teeth, replace multiple teeth.</div>
+              <div class="blog-item-text"></div>
               <!--<div class="blog-item-button"><a href="#" class="btn btn-primary-1">READ MORE</a></div>-->
             </div>
+
+            <!-- BLOG ITEM -->
+            <div class="blog-item">
+              <div class="blog-item-image">
+                <!--<div class="blog-item-date"><i class="fa fa-calendar-o"></i> 03.10.2016</div>
+                <div class="blog-item-comments"><i class="fa fa-comments-o"></i> 12</div>-->
+              </div>
+              <div class="blog-item-title">
+                <h3><a href="detail.html"></a></h3>
+              </div>
+              <!--<div class="blog-item-author"><a href="#">by Dr. Kaeden Bernard</a></div>-->
+              <div class="blog-item-text"></div>
+              <!--<div class="blog-item-button"><a href="#" class="btn btn-primary-1">READ MORE</a></div>-->
+            </div>
+
+            <!-- BLOG ITEM -->
+            <div class="blog-item">
+              <div class="blog-item-image">
+                <!--<div class="blog-item-date"><i class="fa fa-calendar-o"></i> 03.10.2016</div>
+                <div class="blog-item-comments"><i class="fa fa-comments-o"></i> 12</div>-->
+              </div>
+              <div class="blog-item-title">
+                <h3><a href="detail.html"></a></h3>
+              </div>
+              <!--<div class="blog-item-author"><a href="#">by Dr. Kaeden Bernard</a></div>-->
+              <div class="blog-item-text"></div>
+              <!--<div class="blog-item-button"><a href="#" class="btn btn-primary-1">READ MORE</a></div>-->
+            </div>
+
+            <!-- BLOG ITEM -->
+            <div class="blog-item">
+              <div class="blog-item-image">
+                <!--<div class="blog-item-date"><i class="fa fa-calendar-o"></i> 03.10.2016</div>
+                <div class="blog-item-comments"><i class="fa fa-comments-o"></i> 12</div>-->
+              </div>
+              <div class="blog-item-title">
+                <h3><a href="detail.html"></a></h3>
+              </div>
+              <!--<div class="blog-item-author"><a href="#">by Dr. Kaeden Bernard</a></div>-->
+              <div class="blog-item-text"></div>
+              <!--<div class="blog-item-button"><a href="#" class="btn btn-primary-1">READ MORE</a></div>-->
+            </div>
+
           </div>
           <!-- BLOG BUTTONS -->
           <div class="carousel-btn carousel-next" id="next-blog"><i class="fa fa-angle-right"></i></div>
@@ -381,6 +282,7 @@
 ============================== -->
 
   <link rel="stylesheet" type="text/css" href="css/responsive.css" />
+  <link rel="stylesheet" type="text/css" href="css/theme.css" />
 
   <!-- =========================
      SCRIPTS   
@@ -391,6 +293,7 @@
 
   <!-- MY JAVASCRIPT -->
   <%- include resources/javascript %>
+  <script src="/js/app-home.js"></script>
 
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>

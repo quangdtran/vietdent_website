@@ -23,6 +23,10 @@ const bookform = require('../templates/data/bookform.json');
 */
 exports.initLocals = function (req, res, next) {
 	// trang chủ, giới thiệu, dịch vụ, tin tức, liên hệ
+	res.setHeader('Access-Control-Allow-Methods', 'POST, PUT, OPTIONS, DELETE, GET');
+	res.header('Access-Control-Allow-Origin', '*');
+	res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+
 	next();
 };
 
@@ -95,6 +99,7 @@ exports.requireUser = function (req, res, next) {
 	if (!req.user) {
 		req.flash('error', 'Please sign in to access this page.');
 		res.redirect('/keystone/signin');
+		next();
 	} else {
 		next();
 	}

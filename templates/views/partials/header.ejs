@@ -19,9 +19,8 @@
           </a>
           <% } %>
         </div>
-        <div class="top-bar-social"> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#">
-            <i class="fa fa-google-plus"></i></a> <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i
-              class="fa fa-skype"></i></a> </div>
+        <div class="top-bar-social">
+        </div>
         <div class="top-bar-mail">
           <i class="fa fa-envelope"></i>
           <a id="lang-vi" href="#">vietdent@gmail.com</a>
@@ -35,7 +34,10 @@
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="header-logo"> <a href="/"><img src="/images/logo.svg" alt="" />
-            <span class="bold600 color-child-6">
+            <span class="bold600 color-child-6" style="
+                display: inline-block;
+                width: 55px;
+              ">
               <%= header.titleText1.toUpperCase() %>
             </span>
             <span class="color-child-6">
@@ -59,12 +61,15 @@
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="mobile-bar-cont">
-          <div class="top-menu-logo"> <a href="/"><img src="images/logo.svg" alt="" />
-              <span class="bold600 color-child-6">
-                DENTAL
+          <div class="top-menu-logo"> <a href="/"><img src="/images/logo.svg" alt="" />
+              <span class="bold600 color-child-6" style="
+                display: inline-block;
+                width: 45px;
+              ">
+                <%= header.titleText1.toUpperCase() %>
               </span>
-              <span class="color-child-5">
-                CLINIC
+              <span class="color-child-6">
+                <%= header.titleText2.toUpperCase() %>
               </span>
             </a> </div>
           <div class="mobile-bar">
