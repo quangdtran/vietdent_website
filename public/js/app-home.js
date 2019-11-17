@@ -87,7 +87,7 @@ function getSlug(title) {
 
     const serviceId = $('#services ul li a').first().attr('data-service-id');
     $.get(
-      `http://localhost:3000/api/posts?total=6&serviceId=${serviceId}`,
+      `/api/posts?total=6&serviceId=${serviceId}`,
       function (posts) {
         // pending...
         console.log(posts);
@@ -179,7 +179,7 @@ function getSlug(title) {
     services.on('click', function () {
       const serviceId = $(this).attr('data-service-id');
       $.get(
-        `http://localhost:3000/api/posts?total=6&serviceId=${serviceId}`,
+        `/api/posts?total=6&serviceId=${serviceId}`,
         function (posts) {
           // pending...
           // console.log(posts);
