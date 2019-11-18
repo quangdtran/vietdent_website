@@ -11,6 +11,7 @@
 const keystone = require('keystone');
 const converter = require('../utils/converter');
 const header = require('../templates/data/header.json');
+const footer = require('../templates/data/footer.json');
 const bookform = require('../templates/data/bookform.json');
 
 
@@ -50,6 +51,7 @@ exports.beforeRender = function (req, res, next) {
 		if (lang) {
 			typeName = (lang === 'english' ? 'nameEng' : 'nameVie');
 			locals.header = ((lang === 'english' ? header.en : header.vi));
+			locals.footer = ((lang === 'english' ? footer.en : footer.vi));
 			locals.bookform = ((lang === 'english' ? bookform.en : bookform.vi));
 		}
 
