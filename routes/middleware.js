@@ -47,6 +47,7 @@ exports.beforeRender = function (req, res, next) {
 		let typeName = 'nameVie';
 		locals.header = header.vi;
 		locals.bookform = bookform.vi;
+		locals.footer = footer.vi;
 
 		if (lang) {
 			typeName = (lang === 'english' ? 'nameEng' : 'nameVie');
