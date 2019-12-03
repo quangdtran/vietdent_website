@@ -18,7 +18,7 @@ keystone.init({
 
 	'wysiwyg additional buttons': 'searchreplace visualchars,'
 		+ ' charmap ltr rtl pagebreak paste, forecolor backcolor,'
-		+ ' emoticons media, preview print, fontsizeselect, ',
+		+ ' emoticons media, preview print, fontsizeselect, image',
 
 	'wysiwyg additional plugins': 'example, table, advlist, anchor,'
 		+ ' autolink, autosave, charmap, contextmenu, '
@@ -26,7 +26,10 @@ keystone.init({
 		+ ' paste, preview, searchreplace, textcolor,'
 		+ ' visualblocks, visualchars, wordcountwy, image',
 
-	'wysiwyg additional options': { external_plugins: { uploadimage: '/js/uploadimage/plugin.min.js' } },
+	'wysiwyg additional options': {
+		external_plugins: { uploadimage: '/js/uploadimage/plugin.min.js' },
+		uploadimage_form_url: '/+api/image',
+	},
 
 	'stylus': 'public',
 	'static': ['public', 'site'],

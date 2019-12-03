@@ -28,6 +28,7 @@ exports = module.exports = function (app) {
 	// API
 	app.post('/submit-book-form', routes.api.bookForm);
 	app.post('/submit-contact-form', routes.api.contactForm);
+	app.post('/api/image', routes.api.imageUpload);
 	app.get('/api/posts', routes.api.post);
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:

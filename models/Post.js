@@ -31,6 +31,7 @@ function setNameDisplay () {
 
 Post.schema.pre('save', function (next) {
 	this.createdBy = this._req_user;
+	console.log(this);
 	next();
 });
 
