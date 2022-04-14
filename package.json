@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "async": "2.1.4",
+    "async": "3.2.2",
     "dotenv": "4.0.0",
     "ejs-locals": "^1.0.2",
     "email-existence": "^0.1.6",
